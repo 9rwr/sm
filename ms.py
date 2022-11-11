@@ -12,6 +12,7 @@ rr=0
 j=0
 rrr=0
 aa=0
+za=0
 aaa=0
 aaaa=0
 p = 0
