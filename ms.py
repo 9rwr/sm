@@ -1,6 +1,7 @@
 import requests
 import json
 import random
+from user_agent import generate_user_agent
 import time
 import os
 
@@ -43,7 +44,17 @@ else:
 
 os.system('cls' if os.name=='nt'else'clear')
 
+url = 'https://www.tiktok.com/api/search/user/full/?aid=1988&app_language=ar&app_name=tiktok_web&battery_info=1&browser_language=ar-AE&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36&channel=tiktok_web&cookie_enabled=true&cursor=20&device_id=7151371875721430533&device_platform=web_pc&focus_state=true&from_page=search&history_len=20&is_fullscreen=false&is_page_visible=true&keyword={usery}&os=windows&priority_region=&referer=&region=IQ&root_referer=https://www.google.com/&screen_height=1024&screen_width=1280&tz_name=Asia/Baghdad&webcast_language=ar'
 
+he3 = {
+'user-agent': str(generate_user_agent()),
+}
+zaid = requests.get('https://www.tiktok.com/',headers=he3)
+pr = zaid.cookies.get_dict()
+ttwid = pr['ttwid']
+zaid = requests.get('https://www.tiktok.com/api/search/user/full/?aid=1988&app_language=ar&app_name=tiktok_web&battery_info=0.84&browser_language=ar-IQ&browser_name=Mozilla&browser_online=true&browser_platform=Linux%20aarch64&browser_version=5.0%20%28X11%3B%20Linux%20x86_64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F106.0.0.0%20Safari%2F537.36&channel=tiktok_web&cookie_enabled=true&cursor=0&device_id=7136188745632548358&device_platform=web_pc&focus_state=true&from_page=search&history_len=40&is_fullscreen=false&is_page_visible=true&keyword=zaid&os=linux&priority_region=&referer=&region=IQ&screen_height=796&screen_width=360&tz_name=Asia%2FBaghdad&verifyFp=verify_l9zrjkcx_XSZCv5U7_xzys_4UEP_8m1a_TibJS3izVTHL&webcast_language=ar&msToken=qfFKcpRIe_b543Hfa7buaE31PLWDv6-_TQYqevIaTVOPrUNjuwuHR2z0_cEadFELKqD9p6fLuWk8tgAO9lDmVCUX4vqnit3V4rX9zvJfLCbhs9U2apBgYHmKpXPp6DLl2wZy35z0xD6g6TSu_NIh&X-Bogus=DFSzswVLk-tANxW1S02v8OxPBxgg&_signature=_02B4Z6wo00001IuO8aAAAIDBSFHuFzoQUMCLjvUAAEGFfa',headers=he3)
+pr = zaid.cookies.get_dict()
+msToken = pr['msToken']
 
 def gmail():
     took = input('ENTER Your Token Bot :')
@@ -294,60 +305,43 @@ def fol():
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f'[=] - Done : {a}\n[=] - Bad : {p}\n')
 
-def fol1():
-    global a,p
-    lm = 'zaidkaream_'
+def zaidk():
+    global za
     while True:
-        us11 = str(''.join(random.choice(lm)for o in range(3))).lower()
-        #us11=''
+        user='qwertyuiopas.dfghjklzxcvbnm'
+        num='456789'
+        rng=int("".join(random.choice(num)for i in range(1)))
+        usery=str("".join(random.choice(user)for i in range(rng)))
         
-            
-        url2 =f'https://www.tiktok.com/api/search/general/full/?aid=1988&app_language=en&app_name=tiktok_web&battery_info=0.55&browser_language=en-US&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F107.0.0.0%20Safari%2F537.36&channel=tiktok_web&cookie_enabled=true&device_id=7160541228835522053&device_platform=web_pc&focus_state=true&from_page=search&history_len=8&is_fullscreen=false&is_page_visible=true&keyword={us11}&offset=0&os=windows&priority_region=IQ&referer=https%3A%2F%2Fwww.tiktok.com%2Flogin&region=IQ&root_referer=https%3A%2F%2Fwww.google.com%2F&screen_height=900&screen_width=1600&tz_name=Asia%2FBaghdad&webcast_language=en&msToken=N0jkY7svBP65RbcYUyg-I2QIQSevyvJQ5H4JZnNvJCmszP03Rk9pK8liQB8b-okpAsiIHkMbMJ0AEpu0YI0l_sCBSRJ3_LDHlVeG1pO7Ho3bYH_Xd5tNbWbS-m4ezJAlRIdh7-zgNVzy9bGJ&X-Bogus=DFSzswVLVCtANtdJS00Ngt-w3U57&_signature=_02B4Z6wo00001T0jObgAAIDBEBmsEH4CKfk9Iz0AACwyfb'
-        head2 ={
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            #'accept-encoding': 'gzip, deflate, br',
-            'accept-language': 'en-US,en;q=0.9',
-            'cache-control': 'max-age=0',
-            'cookie': '_ttp=2GftrOTPvOz42nD9pREjFcTuiGb; __tea_cache_tokens_1988={%22_type_%22:%22default%22%2C%22user_unique_id%22:%227160541228835522053%22%2C%22timestamp%22:1667193449556}; passport_csrf_token=c3a7dcce4cbc87efe16fc2ec46081c77; passport_csrf_token_default=c3a7dcce4cbc87efe16fc2ec46081c77; tta_attr_id=0.1667458291.7161678825598779393; tta_attr_id_mirror=0.1667458291.7161678825598779393; _ga=GA1.1.2078512563.1667458301; _ga_HV1FL86553=GS1.1.1667458301.1.0.1667458306.55.0.0; tiktok_webapp_theme=dark; tt_csrf_token=QIvZBUM3-gO-xyZd-tQpRsUaRgUsdB3vVPl8; _abck=3C6F7216904663C60C96E5708586C000~-1~YAAQyFITAtOj3jKEAQAA0bVKUwinQyS1j9Is5wjly9pjmiQIdc4lk3fQJ+PB70ibZ/yosRO6U/LXu1YOtU0QCCS1ZBAxiCXBJMKiXu2rKIue6XWFsxXdJof1L5vPSV5+E/jS1FYadJY0RJGj22ZCJcTc+nYgYjuh5aUbMuBbK21VnQOEvzaanyDlWRnT8ilq951my4rgIUxOlvPeS5S2OVpqZrHkEFt8DR2Pk4crFV6sAcOVj2KaZRfzhGSUTT7mYSKScLT3VoUfDaBNuW31fsU2eT161ch+84GiE+PmAgcYYKM4FwootQHSKHqWkr/NaZiz7S8JrUxBmvSQQb5zxF9298CT7GHWLWwg+wJeEfOWy8RFB+E89OiGisy7liiwvxqNYH2J54090g==~-1~-1~-1; bm_sz=5A9085FD00EDA73879ED483D80AAFF73~YAAQyFITAtSj3jKEAQAA0bVKUxGBmTxQs5Du/fgnj/N2caR6q/ph8QWetCSwjT+02YsFzPsl12kdNYEHcq6GS6T9fcxZGZT7E3Gtc8dqmPLELl29+afMqn87c5S4boA8dgRTkwk75V93W2ykLlhTsvELj/ScXZ7k+RR+FHUJZnEwpFL2rZGjHuZT6UdhCcg2oNy2Jnu5KW6ST9SG+CIl/aSEGtgHbisPdiT1rXfN/ovCXuTHybxMpY0/4QxxzZpxov6mOwmFE4Uu2xzH23gD2F5A7MVLwaiWxyQEfp5zZge4PGA=~3490629~3622470; s_v_web_id=verify_la73pfn7_6T0cO2ai_Ph58_4KGy_AFPS_1ynA23n1pXaE; cmpl_token=AgQQAPOnF-RO0o2Fx4z5Ox0_-T7DfJfY_4csYMu_UQ; sid_guard=8d2f47e9fc6d8b522c86f7b3b62ba525%7C1667844800%7C5184000%7CFri%2C+06-Jan-2023+18%3A13%3A20+GMT; uid_tt=03878f309cb3f7a48f9926203115c62c42ac0422f1ca15d850124b6bd000e163; uid_tt_ss=03878f309cb3f7a48f9926203115c62c42ac0422f1ca15d850124b6bd000e163; sid_tt=8d2f47e9fc6d8b522c86f7b3b62ba525; sessionid=8d2f47e9fc6d8b522c86f7b3b62ba525; sessionid_ss=8d2f47e9fc6d8b522c86f7b3b62ba525; sid_ucp_v1=1.0.0-KDVjOTZjNTU4MDExOWUzNjkyMTkyYTI0ODNjNTU5NTc3NTNhY2U1NzYKIAiGiKeIt6XK3V0QwJWlmwYYswsgDDDr0uztBTgEQOoHEAMaBm1hbGl2YSIgOGQyZjQ3ZTlmYzZkOGI1MjJjODZmN2IzYjYyYmE1MjU; ssid_ucp_v1=1.0.0-KDVjOTZjNTU4MDExOWUzNjkyMTkyYTI0ODNjNTU5NTc3NTNhY2U1NzYKIAiGiKeIt6XK3V0QwJWlmwYYswsgDDDr0uztBTgEQOoHEAMaBm1hbGl2YSIgOGQyZjQ3ZTlmYzZkOGI1MjJjODZmN2IzYjYyYmE1MjU; store-idc=maliva; store-country-code=iq; store-country-code-src=uid; tt-target-idc=useast1a; tt-target-idc-sign=uiAKxTw8BtJoujNTUSHkSLXcFNZmFWQEi9-x_snRQ4SibTUStT_S9kfPg14mFxdaRIkwYVOPsePeFDa-m1FyT6oERvjjN9SjQNofSLorUihvF1PD-wZe1dBLsBLYSXPn7lWjUxglLax0JL5L1RUpyl5rEjQtCJ9YkkPXt2DNhSsAYpAMyFZiBV1tHz3fk7hTwlAHpyswca_Con6lq2lNmrTfc_btjsy7DjOaLo44EyX5y5wWkFSs539_ITOOwcOiOrkRuHuwOrrVcemguh2QWZ8aiIIeR9QLkBqxfMtT9fsr5zuPe3WxD4YYu_DZoiOzvvBMNCDt32yp3cvySNn6cuvdQnEQJhCAh2s3Y8AT8QRgopX2yTA-kzW7Y-L5_UwI4ZKsl1lvM03vky2xp_hm5X5RYu5hC8SqzWQIwvDTTCzmywaB1TDyznCLhFFOWUTINGvssJk8KHKKAPHhZJ_YLuVgqZK0QS6yCqU4N76l8VhRDs_BL-FdV7PPxml_BaST; passport_fe_beating_status=true; ttwid=1%7CDhGaolWaz087AfPx33t_h6T6dfNHRKseYR6CrXox-jI%7C1667844812%7C40194d61fa00a863d7a4a7e32021cf1f7542c9e3905886e5c6a15795fb099812; odin_tt=c0e35fb24319463ae61937a272800a9511034aac79c51d3443ad81bd36dc3ebdb3707ce03117c36d7ecfd520283f03e78f6138d5954c4cd44121a08d0fb84e4be79850ccb1411319ac473983a4ad2829; msToken=FmW2ulMHncqDladd2iHPa-NtcfCdZJFYaYmAhhaExWx8o1xqIyJO-vCMrh1rbJ1Jk_YpwIphEl-7K5MzFooZEjUcf_p-NEL2xeYxKRZ4lrkJbLeKwQP6Jvc6dOQdkRxUHxA_EK09Y8vW4gV4; msToken=IRAbv5xYcqOSXD96xZ2rW5S1yneRsa2j9KXz9T1_HJ7D5v-xpneUX2_LeXYy-l8Yt_1Cu0oufTja-PQ3pMos2KZSNHBgOOMR-gQTCOqAJ0PM6APAZZr6gVex9YB1DwPhLF3lCW2FjhT2O0M7',
-            'sec-ch-ua': '"Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"',
-            'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': '"Windows"',
-            'sec-fetch-mode': 'navigate',
-            'sec-fetch-site': 'none',
-            'sec-fetch-user': '?1',
-            'upgrade-insecure-requests': '1',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36',
+        
+        url = f'https://www.tiktok.com/api/search/user/full/?aid=1988&app_language=ar&app_name=tiktok_web&battery_info=1&browser_language=ar-AE&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36&channel=tiktok_web&cookie_enabled=true&cursor=20&device_id=7151371875721430533&device_platform=web_pc&focus_state=true&from_page=search&history_len=20&is_fullscreen=false&is_page_visible=true&keyword={usery}&os=windows&priority_region=&referer=&region=IQ&root_referer=https://www.google.com/&screen_height=1024&screen_width=1280&tz_name=Asia/Baghdad&webcast_language=ar'
+        he = {
+        'accept': '*/*',
+        'cookie':
+        f'ttwid={ttwid};msToken={msToken}',
+        'referer': 'https://www.tiktok.com/',
+        'sec-ch-ua': '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
         }
-        try:
-            re2 = requests.get(url2,headers=head2).json()
-            
-        except requests.exceptions.ConnectionError as error :
-            continue
+        rr = requests.get(url,headers=he).json()
         
         try:
-            try:
             
-                us1 = (len(re2['data'][0]['user_list'][0]['user_info']))
             
-                
-                for i in range(0,11):
-                
-                    us = re2['data'][0]['user_list'][i]['user_info']['unique_id']
-
-                    a+=1
-                    os.system('cls' if os.name=='nt'else'clear')
-                    print(f'[-] - Done : {a}\n[-] - Bad : {p}\n[-] - User : {us}\n')
-                    with open('user.txt','a') as f8:
-                        f8.write(f'{us}@gmail.com\n')
-            except IndexError as error:
-                p+=1
-                os.system('cls' if os.name=='nt'else'clear')
-                print(f'[-] - Done : {a}\n[-] - Bad : {p}\n[-] - User : {us}\n')
-                continue
-        except KeyError as error:
-            p+=1
-            continue
-                    
+            email = len(rr['user_list'][0]['user_info']['unique_id'])
+            for i in range(0,email):
+                za+=1
+                user1 = rr['user_list'][i]['user_info']['unique_id']
+                print(f'[=] - user ; {user1}')
+                with open('user.txt','a') as f9:
+                    f9.write(f'{user1}@gmail.com\n')
+        except IndexError as error:
+            zaidk()
         
               
 def ok():
@@ -404,9 +398,9 @@ try:
     
     inp = int(input('[=] - Enter Your Choice : '))
     if inp == 1:
-        fol()
+        False
     elif inp ==2:
-        fol1()
+        zaidk()
     elif inp == 3:
         False
     elif inp==4:
